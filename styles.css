@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata.ttf') format('truetype');
+}
+
+body {
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    color: silver;
+    font-family: Inconsolata;
+}
+
+body.blog {
+    position: initial;
+    max-width: 70%;
+    background-color: black;
+    font-family: Inconsolata;
+    color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+
+}
+
+div#header {
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    animation-name: home;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes home {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#left {
+    box-sizing: border-box;
+    height: 1000px;
+    padding: 0 5px 0 5px;
+    border-right: solid 2px white;
+    animation-name: border;
+    animation-duration: 10s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes border {
+      from {height: 0px;}
+      to {height: 1000px;}
+}
+
+#right {
+    padding: 0 5px 0 5px;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: silver;
+}
+
+a.blog {
+    color: #1a8f65;
+    text-decoration: none;
+}
+
+p.header-left {
+    font-size: 18px;
+    text-align: right;
+    margin-top: 0px;
+    color: white;
+}
+
+p.header-right {
+    font-size: 18px;
+    text-align: left;
+    margin-top: 0px;
+    color: white;
+}
+
+p.left {
+    text-align: right;
+    font-size: 14px;
+}
+
+p.right {
+    text-align: left;
+    font-size: 14px;
+}
+
+p {
+    font-family: Inconsolata;
+    font-size: 19px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+#container {
+    display: grid;
+    opacity: 0;
+    grid-template-columns: 50% 50%;
+    animation-name: content;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes content {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+span.timestamp {
+    color: silver;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+img.bp, video {
+    width: 100%;
+}
+
+figure {
+    border: 2px solid silver;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+figcaption {
+    padding: 10px;
+    font-size: 16px;
+}
+
+h1.blog {
+    text-align: left;
+    font-size: 44px;
+    color: white;
+}
+
+h2 {
+    text-align: left;
+    font-size: 26px;
+    color: white;
+}
+
+footer {
+    background-color: black;
+    border-top: 2px solid white;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+footer::after {
+    content: "Made with HTML & CSS | aferpe [at] pm [dot] me";
+}
+
+home-button {
+    border: 3px solid silver;
+    padding: 5px;
+    color: silver;
+    display:inline-block;
+}
+
+home-button::after {
+    content: "Home";
+}
+ 
+home-button:hover {
+    color: black;
+    transition: background-color 200ms ease-in-out;
+    background-color: white;
+    border-color: white;
+}
+ 
+home-button:active {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+/* Toggable contact info */
+
+input[type=checkbox] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-family: Inconsolata;
+}
+
+label:hover {
+    color: silver;
+}
+
+/* Default State */
+
+.contact {
+    display: none;
+    color: white;
+    font-size: 14px;
+    font-family: Inconsolata;
+}
+
+/* Toggled State */
+input[type=checkbox]:checked ~ div.contact {
+    display: block;
+    animation-name: contact;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes contact {
+    from {opacity: 0; margin-top: 0px;}
+    to {opacity: 1; margin-top: 10px;}
+}
